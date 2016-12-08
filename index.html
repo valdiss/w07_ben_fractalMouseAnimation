@@ -1,0 +1,28 @@
+<html>
+<body>
+<div id="fractal_cont"></div>
+<div id="controls_cont">
+    <label for="tree_segments_count">Segments Count</label>
+    <input type="range" id="tree_segments_count" name="tree_segments_count" min="1" max="12" value="11" /><br />
+    
+    <label for="tree_segments_length">Segments Length</label>
+    <input type="range" id="tree_segments_length" name="tree_segments_length" min="50" max="100" value="90" /><br />
+    
+    <label for="tree_segments_angle1">Segments angle 1</label>
+    <input type="range" id="tree_segments_angle1" name="tree_segments_angle1" min="10" max="50" value="38" /><br />    
+    
+    <label for="tree_segments_angle2">Segments angle 2</label>
+    <input type="range" id="tree_segments_angle2" name="tree_segments_angle2" min="10" max="50" value="27" /><br />       
+</div>
+<script src="fractalTree.js"></script>
+</body>
+
+<style>
+#fractal_cont {
+    margin: auto;
+    width:700px;
+    height:400px;
+}
+</style>
+
+</html>
