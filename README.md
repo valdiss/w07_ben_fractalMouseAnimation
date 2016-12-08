@@ -1,4 +1,4 @@
-# W06 :: Ben :: Exercice JavaScript :: fractal tree mouse animation #
+# W07 :: Ben :: Exercice JavaScript :: fractal tree mouse animation #
 *Move a fractal tree by shaking mouse left and right, and add other reactions*
 
 [Voir une démo ici] (https://github.com/bensoille/w07_ben_fractalMouseAnimation.git "Démo en ligne") par exemple
