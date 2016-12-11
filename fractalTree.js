@@ -130,27 +130,24 @@
     // - stepsCount : the number of frames (each frame is 4ms)
     var growTree = function(stepsCount, howMuch) {
 
-        let cur_segments_count = parseInt(document.getElementById("tree_segments_count").value, 10);
         let min_segments_count = parseInt(document.getElementById("tree_segments_count").min, 10);
-        let max_segments_count = parseInt(document.getElementById("tree_segments_count").max, 10);
-        let step_segments_count;
+        let max_segments_count = parseInt(document.getElementById("tree_segments_count").value, 10);
+        let step_segments_count = (max_segments_count - min_segments_count) / stepsCount;
 
         let cur_segments_length = parseInt(document.getElementById("tree_segments_length").value, 10);
         let min_segments_length = parseInt(document.getElementById("tree_segments_length").min, 10);
         let max_segments_length = parseInt(document.getElementById("tree_segments_length").max, 10);
         let step_segments_length;
 
-        let force = parseFloat(howMuch/5);
+        let force = parseFloat(howMuch / 10);
         if (force < 0) force = -force;
 
         let currentStep = 0;
 
         if (howMuch < 0) {
-            step_segments_count = ((max_segments_count - cur_segments_count) * force) / stepsCount;
-            step_segments_length = ((min_segments_length - cur_segments_length) * force) / stepsCount; // negative value expected
-        } else if (howMuch > 0) {
             step_segments_length = ((max_segments_length - cur_segments_length) * force) / stepsCount;
-            step_segments_count = ((min_segments_count - cur_segments_count) * force) / stepsCount; // negative value expected
+        } else if (howMuch > 0) {
+            step_segments_length = ((min_segments_length - cur_segments_length) * force) / stepsCount; // negative value expected
         }
         // The apply function given to animate(), would be added to animate_apply_functs list by function animateTree()
         // Returns true, when running ok
@@ -223,7 +220,7 @@
 
 
     // Actually launch "growing tree" animation
-    //  growTree(100); // Ends @400
+    growTree(100); // Ends @400
 
     // Optionnally add bending effects while growing
     //     bendTree(40,70) ; // Ends @160
